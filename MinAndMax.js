@@ -4,6 +4,7 @@
  * Step2 : Stroring that numbers into a array
  * Step3 : Finding 2nd largest and 2nd Smallest number 
  */
+
 let maxCount = 10;
 let count = 0;
 const number = [];
@@ -39,6 +40,20 @@ for(i = 0 ; i < number.length; i++){
     }
 }
 
-//printing the required output
-console.log('Seccond maximum : ' + secondMax);
-console.log('Seccond minimunm : ' + secondMin);
+// sorting array
+let temp;
+for(i = 0; i < maxCount; i++){
+    for(j = i; j<maxCount; j++){
+        if(number[i] > number[j] ){
+            temp =number[i];
+            number[i]= number[j];
+            number[j] = temp;
+        }
+    }
+}
+//printing required output
+console.log('Sorted numbers are :' + number);
+console.log('Second largest number : ' + number[number.length-2]);
+console.log('Second smallest number : ' + number[1]);
+
+
